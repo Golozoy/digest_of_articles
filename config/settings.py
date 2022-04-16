@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # added moduls
     'rest_framework',
-    #'rest_framework.authtoken'
+    'djoser',
+    'rest_framework_simplejwt',
     # added apps
     'articles.apps.ArticlesConfig',
 ]
