@@ -7,7 +7,7 @@ class ArticleAdmin(admin.ModelAdmin):
     list_display = ('id', 'title', 'slug', 'time_updated', 'is_published')
     list_display_links = ('id', 'title', 'slug')
     list_editable = ('is_published',)
-    list_filter = ('id', 'title', 'slug', 'is_published', 'time_created')
+    list_filter = ('title', 'slug', 'is_published', 'time_created')
     list_per_page = 30
     ordering = ('title',)
     search_fields = ('title', 'slug', 'time_updated')
@@ -17,7 +17,7 @@ class ArticleAdmin(admin.ModelAdmin):
 class AuthorAdmin(admin.ModelAdmin):
     list_display = ('id', 'nickname', 'slug')
     list_display_links = ('id', 'nickname', 'slug')
-    list_filter = ('id', 'nickname', 'slug')
+    list_filter = ('nickname', 'slug')
     list_per_page = 30
     ordering = ('nickname',)
     search_fields = ('nickname', 'slug')

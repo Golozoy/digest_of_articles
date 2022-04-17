@@ -11,12 +11,11 @@ class ArticleListView(ListAPIView):
 
 
 class ArticleRetieveView(RetrieveAPIView):
-    #queryset = ArticleModel.objects.all()
     serializer_class = ArticleRetrieveSerializer
     lookup_field = 'slug'
 
     def get_queryset(self):
-        if self.request.auth == AnonymousUser:
+        if self.request.user.is_authenticated:
             return ArticleModel.objects.all()
         else:
             return ArticleModel.objects.filter(is_published=True)
