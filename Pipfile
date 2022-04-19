@@ -8,6 +8,9 @@ django = "*"
 djangorestframework = "*"
 djangorestframework-simplejwt = "*"
 djoser = "*"
+django-cors-headers = "*"
+psycopg2-binary = "*"
+pgsql = "*"
 
 [dev-packages]
 

@@ -1,5 +1,4 @@
 from rest_framework.generics import ListAPIView, RetrieveAPIView
-from django.contrib.auth.models import AnonymousUser
 
 from .models import ArticleModel
 from .serializers import ArticleListSerializer, ArticleRetrieveSerializer
