@@ -16,6 +16,7 @@ Application capabilities. All entries are divided into two categories `is_public
 * `admin/` - панель администратора / admin panel
 * `api/articles/` - списов всех статей в кратком виде / list of all articles in short form
 * `api/articles/(заголовок статьи/title of article)` - просмотр опеределеной статьи / viewing a specific article
+* `api/articles/entries/(часть заголовка/title part)` - список всех статей, где содержатся введеные символы / list of all articles containing the entered characters
 * `api/auth/` - список url для работы с пользователями / url list for working with users [больше/more](https://djoser.readthedocs.io/en/latest/base_endpoints.html)
 * `api/token/` - список url для работы с JWT / url list for working with JWT [больше/more](https://djoser.readthedocs.io/en/latest/jwt_endpoints.html)
 

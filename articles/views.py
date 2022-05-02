@@ -5,11 +5,13 @@ from .serializers import ArticleListSerializer, ArticleRetrieveSerializer
 
 
 class ArticleListView(ListAPIView):
+    """Список всех статей."""
     queryset = ArticleModel.objects.all()
     serializer_class = ArticleListSerializer
 
 
 class ArticleRetieveView(RetrieveAPIView):
+    """Конкретная статья"""
     serializer_class = ArticleRetrieveSerializer
     lookup_field = 'slug'
 
@@ -18,3 +20,11 @@ class ArticleRetieveView(RetrieveAPIView):
             return ArticleModel.objects.all()
         else:
             return ArticleModel.objects.filter(is_published=True)
+
+
+class ArticleFilterListView(ListAPIView):
+    """Список статей с частичным совпадением url"""
+    serializer_class = ArticleListSerializer
+
+    def get_queryset(self):
+        return ArticleModel.objects.filter(slug__icontains=self.kwargs['slug'])
